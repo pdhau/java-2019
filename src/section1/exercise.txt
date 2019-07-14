@@ -1,0 +1,20 @@
+Sum Calculator
+Write a class with the name SimpleCalculator. The class need two fields (instance variables)
+with names firstNumber and secondNumber both of type double.
+
+Write the following methods (instance methods):
+1) Method named getFirstNumber without any parameters, it needs to return the value of firstNumber fields
+2) Method named getSecondNumber without any parameters, it needs to return the value of secondNumber fields
+3) Method named setFirstNumber with one parameter of type double, it need set value of the firstNumber fields
+4) Method named setSecondNumber with one parameter of type double, it need set value of the secondNumber fields
+5) Method named getAdditionResult without any parameters, it needs to return result of adding the filed values of
+firstNumber and secondNumber
+6) Method named getSubtractionResult without any parameters, it needs to return result of subtracting the filed values of
+   firstNumber and secondNumber
+7) Method named getMultiplicationResult without any parameters, it needs to return result of multiplying the filed values of
+   firstNumber and secondNumber
+8) Method named getDivisionResult without any parameters, it needs to return result of diving the filed values of
+   firstNumber and secondNumber
+9) Create static variable with name is counter to count for each execute  these method : getAdditionResult, getMultiplicationResult
+, getMultiplicationResult, getDivisionResult counter variable will be increase 1
+10) Method static getCount without any parameter to display value of counter variable.
