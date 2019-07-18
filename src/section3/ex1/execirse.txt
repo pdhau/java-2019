@@ -1,0 +1,12 @@
+Company A require build system to calculate salary of employee by position.
+
+We have 3 positions:
++ Manager
++ Leader
++ Staff
+
+With position is manager : salary = revenue * 10%
+With position is Leader : salary = basic salary * pay rate + benifit (pay rate = 4.2 , benifit = 300$)
+With position is Staff: salary = basic salary * pay rate (pay rate = 3.9)
+
+If employee is female will be add 50$ to salary each month  
