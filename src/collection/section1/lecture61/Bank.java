@@ -1,10 +1,15 @@
 package collection.section1.lecture61;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Bank {
 
     private List<Branch> branches;
+
+    public Bank() {
+        this.branches = new ArrayList<>();
+    }
 
     public List<Branch> getBranches() {
         return branches;

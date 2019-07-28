@@ -1,5 +1,6 @@
 package collection.section1.lecture61;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Branch {
@@ -7,16 +8,26 @@ public class Branch {
     private String name;
     private List<Customer> customers;
 
-    public Branch() {
-
-    }
-
     public Branch(String name) {
         this.name = name;
+        this.customers = new ArrayList<>();
+    }
+
+    public Branch(String name, List<Customer> customers) {
+        this.name = name;
+        this.customers = customers;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public List<Customer> getCustomers() {
         return customers;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public void setCustomers(List<Customer> customers) {

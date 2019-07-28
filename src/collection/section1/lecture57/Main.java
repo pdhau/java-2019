@@ -10,19 +10,21 @@ public class Main {
         MobilePhone phone = new MobilePhone();
         Contact contact = new Contact();
         Map<String, Contact> contacts = new HashMap<>();
-        int option = 0;
-        Scanner scanner = new Scanner(System.in);
-        while (6 != option) {
+        String option;
+        Scanner scanner;
+        boolean isQuit = false;
+        while (!isQuit) {
             System.out.println("1. List of contacts");
             System.out.println("2. Add new contacts");
             System.out.println("3. Update existing contact");
             System.out.println("4. Remove contacts");
             System.out.println("5. Find contacts");
             System.out.println("6. Quit");
-            System.out.println("What do you want?");
-            option = scanner.nextInt();
+            System.out.print("What do you want? ");
+            scanner = new Scanner(System.in);
+            option = scanner.nextLine();
             switch (option) {
-                case 1:
+                case "1":
                     System.out.println("Contact list: ");
                     contacts = phone.getContacts();
                     contacts.forEach((k, v) -> {
@@ -30,7 +32,7 @@ public class Main {
                     });
                     break;
 
-                case 2:
+                case "2":
                     System.out.print("Input name: ");
                     scanner = new Scanner(System.in);
                     String name = scanner.nextLine();
@@ -50,7 +52,7 @@ public class Main {
                     }
                     break;
 
-                case 3:
+                case "3":
                     System.out.print("Input contact name: ");
                     scanner = new Scanner(System.in);
                     name = scanner.nextLine();
@@ -66,7 +68,7 @@ public class Main {
                     contact.setPhoneNumber(phoneNumber);
                     break;
 
-                case 4:
+                case "4":
                     System.out.print("Input contact name: ");
                     scanner = new Scanner(System.in);
                     name = scanner.nextLine();
@@ -86,7 +88,7 @@ public class Main {
                  
                     break;
 
-                case 5:
+                case "5":
                     System.out.print("Input contact name: ");
                     scanner = new Scanner(System.in);
                     name = scanner.nextLine();
@@ -100,10 +102,14 @@ public class Main {
                     System.out.println(contact);
                     break;
 
+                case "6":
+                    isQuit = true;
+                    break;
+
                 default:
+                    System.out.println("Your option do NOT support!");
                     break;
             }
         }
-        scanner.close();
     }
 }

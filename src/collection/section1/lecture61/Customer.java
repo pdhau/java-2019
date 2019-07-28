@@ -1,35 +1,33 @@
 package collection.section1.lecture61;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Customer {
 
     private String name;
-    private List<Double> doubles;
-    private List<Transaction> transactions;
+    private double money;
+    private List<Double> transactions;
 
     public Customer() {
+        this.transactions = new ArrayList<>();
     }
 
-    public Customer(String name, List<Double> doubles) {
+    public Customer(String name, double money) {
+        this();
         this.name = name;
-        this.doubles = doubles;
-    }
-
-    public Customer(String name, List<Double> doubles, List<Transaction> transactions) {
-        this(name, doubles);
-        this.transactions = transactions;
+        this.money = money;
     }
 
     public String getName() {
         return name;
     }
 
-    public List<Double> getDoubles() {
-        return doubles;
+    public double getMoney() {
+        return money;
     }
 
-    public List<Transaction> getTransactions() {
+    public List<Double> getTransactions() {
         return transactions;
     }
 
@@ -37,11 +35,15 @@ public class Customer {
         this.name = name;
     }
 
-    public void setDoubles(List<Double> doubles) {
-        this.doubles = doubles;
+    public void setMoney(double money) {
+        this.money = money;
     }
 
-    public void setTransactions(List<Transaction> transactions) {
+    public void setTransactions(List<Double> transactions) {
         this.transactions = transactions;
+    }
+
+    public String toString() {
+        return "Name: " + this.getName() + " -- Money: " + this.getMoney();
     }
 }

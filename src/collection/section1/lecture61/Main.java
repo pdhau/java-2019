@@ -1,23 +1,19 @@
 package collection.section1.lecture61;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Main {
 
     public static void main(String[] args) {
         Bank abc = new Bank();
         Branch phunhuan = new Branch("phunhuan");
-        List<Double> doubles = new ArrayList<Double>();
-        doubles.add(Double.parseDouble("1000"));
-        doubles.add(Double.parseDouble("2000"));
-        Customer haupham = new Customer("haupham", doubles);
-        Transaction trs = new Transaction();
-        trs.setCustomer(haupham);
-        trs.setMoney(500);
+        Branch quan3 = new Branch("quan3");
+        Customer haupham = new Customer("haupham", 3000);
+        Customer thunguyen = new Customer("thunguyen", 5000);
+        Customer anpham = new Customer("anpham", 5000);
         abc.addBranch(phunhuan);
+        abc.addBranch(quan3);
         abc.addCustomer(phunhuan, haupham);
-        phunhuan = abc.getBranches().get(abc.getBranches().indexOf(phunhuan));
-        phunhuan.findCustomerByName("haupham");
+        abc.addCustomer(phunhuan, thunguyen);
+        abc.addCustomer(quan3, anpham);
+        System.out.println(abc.getBranches().get(0).getCustomers().get(1));
     }
 }

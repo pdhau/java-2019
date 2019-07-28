@@ -1,9 +1,13 @@
 package collection.section1.lecture67;
 
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
         Playlist myPlayList = new Playlist();
+        Scanner in;
+        String option;
         Album theone = new Album();
         Album thetwo = new Album();
         Song song1 = new Song("Song 1", 10);
@@ -19,6 +23,36 @@ public class Main {
         myPlayList.addSong(theone, song1);
         myPlayList.addSong(theone, song5);
         myPlayList.addSong(thetwo, song5);
-        myPlayList.play();
+        boolean isExit = false;
+        while (!isExit) {
+            System.out.println("1. Play");
+            System.out.println("2. Next");
+            System.out.println("3. Privious");
+            System.out.println("4. Replay");
+            System.out.println("5. Quit");
+            System.out.print("What do you want: ");
+            in = new Scanner(System.in);
+            option = in.nextLine();
+            switch (option) {
+                case "1":
+                    myPlayList.play();
+                    break;
+                case "2":
+                    myPlayList.next();
+                    break;
+                case "3":
+                    myPlayList.privious();
+                    break;
+                case "4":
+                    myPlayList.replay();
+                    break;
+                case "5":
+                    isExit = true;
+                    break;
+                default:
+                    System.out.println("Your option do NOT support!");
+                    break;
+            }
+        }
     }
 }
