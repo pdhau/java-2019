@@ -1,7 +1,9 @@
 package input;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -42,7 +44,6 @@ public class Student {
             id = Integer.parseInt(in.nextLine());
         }
         this.id = id;
-        in.close();
     }
 
     public void setName(String name) {
@@ -80,8 +81,22 @@ public class Student {
         this.status = status;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
     public String toString() {
         return String.format("%d"+COMMA+"%s"+COMMA+"%.2f"+COMMA+"%.2f"+COMMA+"%.2f"+COMMA+"%s\n", id, name, point1, point2, point3, status);
+    }
+
+    public void save(String filename) {
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(filename, true));
+            writer.append(this.toString());
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private boolean validatePoint(float point) {
@@ -113,7 +128,7 @@ public class Student {
         return (point1 + point2 + point3)/3;
     }
 
-    public void setStatus() {
+    public void updateStatus() {
         if (5 <= gpa()) {
             this.status = "PASS";
         } else {
